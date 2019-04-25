@@ -14,7 +14,7 @@ set(sources src/particle_filter.cpp src/main.cpp ${HEADERS} ${HEADERS_HPP})
 
 
 
-if(${CMAKE_SYSTEM_NAME} MATCHES "Darwin") 
+if(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
 
 include_directories(/usr/local/include)
 include_directories(/usr/local/opt/openssl/include)
@@ -22,11 +22,10 @@ link_directories(/usr/local/lib)
 link_directories(/usr/local/opt/openssl/lib)
 link_directories(/usr/local/Cellar/libuv/1*/lib)
 
-endif(${CMAKE_SYSTEM_NAME} MATCHES "Darwin") 
+endif(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
 
 
 add_executable(particle_filter ${sources})
 
 
 target_link_libraries(particle_filter z ssl uv uWS)
-
